@@ -1,22 +1,49 @@
 <div class="hero bg-base-200 min-h-screen">
+
+  @if(feeling() === 'Over the Moon'){
+    <div class="relative w-full h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-blue-400 to-blue-900">
+      <!-- Moon -->
+      <div class="moon w-40 h-40 rounded-full absolute top-20 left-20 animate-pulse"></div>
+      
+      <!-- Cow -->
+      <div class="cow w-32 h-32 absolute bottom-0 left-20"
+           @jumpOverMoon></div>
+           <div class="bg-green-300 min-h-10"></div>
+    </div> 
+  }@else if(feeling() === 'sad'){
+    <div class="relative w-full h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-slate-400 to-slate-900">
+    </div> 
+  }@else if(feeling() === 'okay'){
+    <div class="relative w-full h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-green-400 to-green-900">
+    </div> 
+  }@else if(feeling() === 'happy'){
+    <div class="relative w-full h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-rose-400 to-rose-900">
+    </div> 
+  }@else if(feeling() === 'extatic'){
+    <div class="relative w-full h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-yellow-400 to-yellow-900">
+    </div> 
+  }
+  
+
   <div class="hero-content text-center">
-    <div class="flex flex-col">
-    <div class="max-w-md">
-      <h1 class="text-5xl font-bold">Hello there</h1>
-      <p class="py-6">
-        Welcome to the Tailwind Angular starter
-      </p>
+    <div class="flex flex-col justify-centre items-center">
+    <div class="max-w-lg">
+      <h1 class="text-5xl font-bold mb-10 animate-pulse">How are you feeling today?</h1>
+
+        <button (click)="updateFeeling('sad')" class="btn btn-outline ml-2">Sad</button>
+        <button (click)="updateFeeling('okay')" class="btn btn-outline btn-primary ml-2">Okay</button>
+        <button (click)="updateFeeling('happy')" class="btn btn-outline btn-secondary ml-2">Happy</button>
+        <button (click)="updateFeeling('extatic')" class="btn btn-outline btn-accent ml-2">Extactic</button>
+        <button (click)="updateFeeling('Over the Moon')" class="btn btn-outline btn-error ml-2">Over the Moon</button>
+
     </div>
-    <div class="max-w-md">
-      <p class="py-6">
-        Here are some links to get you started!
-      </p>
-      <div class="flex grid-cols-4 gap-3">
-        <button routerLink="https://tailwindcss.com/" class="btn btn-outline">Tailwind Css</button>
-        <button routerLink="https://daisyui.com/" class="btn btn-outline btn-primary">Daisy UI</button>
-        <button routerLink="https://www.hyperui.dev/" class="btn btn-outline btn-secondary">Hyper UI</button>
-        <button routerLink="https://floatui.com/" class="btn btn-outline btn-accent">Float UI</button>
-      </div>
+
+    <div class="max-w-md mt-12">
+      @if(feeling()){
+         <h1 class="text-4xl font-extrabold animate-pulse">I'm feeling {{feeling()}}</h1>
+      }@else{
+        <h1 class="text-xl font-bold">Let us know how you are feeling!</h1>
+      }
     </div>
   </div>
   </div>

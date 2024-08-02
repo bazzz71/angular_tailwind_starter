@@ -1,0 +1,15 @@
+.moon {
+    background: radial-gradient(circle, #f1f5f9 50%, #d8d371 51%);
+  }
+  
+  .cow {
+    background: url('../assets/cow.png') no-repeat center;
+    background-size: contain;
+  }
+  
+  @keyframes jump {
+    0% { transform: translateX(0) translateY(0); }
+    30% { transform: translateX(50%) translateY(-150px); }
+    60% { transform: translateX(100%) translateY(0); }
+    100% { transform: translateX(100%) translateY(0); }
+  }
