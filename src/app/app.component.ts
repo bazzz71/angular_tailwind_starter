@@ -20,6 +20,8 @@ export class AppComponent {
 
   changeSlider(event:any){
     const background = document.getElementById('root') as HTMLInputElement;
+    const submitButton = document.getElementById('submitButton') as HTMLInputElement;
+
     if (this.slider == "1") {
       background.className = "hero bg-base-100 min-h-screen";
     }
@@ -38,6 +40,8 @@ export class AppComponent {
     else{
       background.className = "hero bg-base-200 min-h-screen";
     }
+
+    submitButton.removeAttribute("disabled");
   }
 }
 
